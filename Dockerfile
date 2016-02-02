@@ -16,13 +16,13 @@ RUN apt-get -y install supervisor
 RUN apt-get -y install ssmtp
 RUN apt-get -y install mysql-server mysql-client
 RUN apt-get -y install graphicsmagick graphicsmagick-imagemagick-compat language-pack-de gettext intltool catdoc htmldoc
-RUN apt-get -y install apache2 libapache2-mod-php7 php7-mysql php7-gd php7-mcrypt php7-curl php7-xsl
-RUN apt-get -y install php7-intl
-RUN apt-get -y install php7-cli
-RUN apt-get -y install php7-xdebug
-RUN apt-get -y install php7-sqlite
+RUN apt-get -y install apache2 libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-mcrypt php7.0-curl php7.0-xsl
+RUN apt-get -y install php7.0-intl
+RUN apt-get -y install php7.0-cli
+RUN apt-get -y install php-xdebug
+RUN apt-get -y install php7.0-sqlite3
 RUN apt-get -y install cron
-RUN echo "0.0.20160202.0" > /etc/iomq_version
+RUN echo "0.0.20160202.1" > /etc/iomq_version
 RUN apt-get update -qq && apt-get -y dselect-upgrade
 
 ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
@@ -58,7 +58,7 @@ RUN a2enmod rewrite
 
 # Add PHP-Mod
 #BUG beim Install von mcyrpt 14.04
-#RUN php7enmod mcrypt
+#RUN php7.0enmod mcrypt
 
 EXPOSE 80
 EXPOSE 3306
