@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo "Include /docker/conf/apache/sites-enabled_1510/*.conf" > /etc/apache2/sites-available/000-default.conf
+echo "Include /docker/conf/apache/sites-enabled_1604/*.conf" > /etc/apache2/sites-available/000-default.conf
 echo "ServerName localhost" > /etc/apache2/conf-available/fqdn.conf
 ln -s /etc/apache2/conf-available/fqdn.conf /etc/apache2/conf-enabled/fqdn.conf
 
@@ -23,9 +23,9 @@ if [[ $APACHE_MYUSER != "" ]]; then
 APACHE_USERID=${APACHE_USERID:-"1000"}
 useradd --uid $APACHE_USERID --home /home/$APACHE_USER -m --shell /bin/bash $APACHE_USER
 
-checkhomelamp=`grep homelamp1510 /home/$APACHE_USER/.bashrc 2>&1`
+checkhomelamp=`grep homelamp1604 /home/$APACHE_USER/.bashrc 2>&1`
 if [[ $checkhomelamp == "" ]]; then
-echo "source /docker/conf/bashrc/homelamp1510.txt" >> /home/$APACHE_USER/.bashrc
+echo "source /docker/conf/bashrc/homelamp1604.txt" >> /home/$APACHE_USER/.bashrc
 fi
 
 chown $APACHE_USER.$APACHE_GROUP $WORKDIR

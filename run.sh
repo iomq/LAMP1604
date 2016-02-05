@@ -12,8 +12,8 @@ mkdir -p $DOCKER_DIR/conf/mysql/
 mkdir -p $DOCKER_DIR/logs/apache/
 mkdir -p $DOCKER_DIR/logs/php/
 chmod 777 $DOCKER_DIR/logs/php/
-mkdir -p $DOCKER_DIR/conf/apache/sites-available_1510/
-mkdir -p $DOCKER_DIR/conf/apache/sites-enabled_1510/
+mkdir -p $DOCKER_DIR/conf/apache/sites-available_1604/
+mkdir -p $DOCKER_DIR/conf/apache/sites-enabled_1604/
 mkdir -p $DOCKER_DIR/conf/php/
 #WEB-PHP
 touch $DOCKER_DIR/conf/php/99-docker.ini
@@ -33,13 +33,13 @@ ln -s $DOCKER_DIR/conf/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf
 cp -ar /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 echo "Europe/Berlin" > /etc/timezone
 mkdir -p $DOCKER_DIR/conf/profile/
-touch $DOCKER_DIR/conf/profile/profilelamp1510.txt
-cat $DOCKER_DIR/conf/profile/profilelamp1510.txt > /etc/profile.d/ownprofile.sh
+touch $DOCKER_DIR/conf/profile/profilelamp1604.txt
+cat $DOCKER_DIR/conf/profile/profilelamp1604.txt > /etc/profile.d/ownprofile.sh
 dpkg-reconfigure locales
 
 #bashrc
 mkdir -p $DOCKER_DIR/conf/bashrc/
-touch $DOCKER_DIR/conf/bashrc/homelamp1510.txt
+touch $DOCKER_DIR/conf/bashrc/homelamp1604.txt
 
 #nsenter4docker
 NSENTER_USER=${NSENTER_USER:-"holger"}
@@ -47,14 +47,14 @@ useradd --home /home/$NSENTER_USER -m --shell /bin/bash $NSENTER_USER
 
 #Website
 cd $DOCKER_DIR/
-cp /tmp/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-available_1510/
-ln -s $DOCKER_DIR/conf/apache/sites-available_1510/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-enabled_1510/
+cp /tmp/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-available_1604/
+ln -s $DOCKER_DIR/conf/apache/sites-available_1604/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-enabled_1604/
 tar xvfz /tmp/iomqwebsite.tar.gz
 
 #CronJob
 mkdir -p $DOCKER_DIR/conf/cron/
-touch $DOCKER_DIR/conf/cron/crond1510
-ln -s $DOCKER_DIR/conf/cron/crond1510 /etc/cron.d/dockercron
+touch $DOCKER_DIR/conf/cron/crond1604
+ln -s $DOCKER_DIR/conf/cron/crond1604 /etc/cron.d/dockercron
 cron
 
 exec supervisord -n
