@@ -7,6 +7,8 @@ mkdir -p $DOCKER_DIR
 #MYSQL
 mkdir -p $DOCKER_DIR/conf/mysql/
 /mysql_admin.sh
+touch $DOCKER_DIR/conf/mysql/myDOCKER1604.cnf
+ln -s $DOCKER_DIR/conf/mysql/myDOCKER1604.cnf /etc/mysql/mysql.conf.d/zzzzmyDOCKER.cnf
 
 #APACHE-PHP
 mkdir -p $DOCKER_DIR/logs/apache/

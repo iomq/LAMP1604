@@ -38,7 +38,7 @@ ADD start-apache2.sh /start-apache2.sh
 ADD start-mysqld.sh /start-mysqld.sh
 ADD run.sh /run.sh
 ADD mysql_admin.sh /mysql_admin.sh
-ADD my.cnf /etc/mysql/conf.d/my.cnf
+ADD my.cnf /etc/mysql/mysql.conf.d/zzzDOCKER.cnf
 ADD dockerprofile.sh /etc/profile.d/dockerprofile.sh
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
 ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
