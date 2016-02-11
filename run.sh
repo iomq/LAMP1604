@@ -43,6 +43,15 @@ dpkg-reconfigure locales
 mkdir -p $DOCKER_DIR/conf/bashrc/
 touch $DOCKER_DIR/conf/bashrc/homelamp1604.txt
 
+#external opt-Dir
+mkdir -p $DOCKER_DIR/opt/
+
+#external bin-Dir to /usr/local/php/bin/
+mkdir -p $DOCKER_DIR/bin/1604/
+mkdir -p /usr/local/php/bin/
+cd /usr/local/php/bin/
+find $DOCKER_DIR/bin/1604/* -type f -name '*' -exec ln -s {} \;
+
 #nsenter4docker
 NSENTER_USER=${NSENTER_USER:-"holger"}
 useradd --home /home/$NSENTER_USER -m --shell /bin/bash $NSENTER_USER
