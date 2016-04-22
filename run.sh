@@ -28,7 +28,7 @@ ln -s $DOCKER_DIR/conf/php/99-docker-cli_1604.ini /etc/php/7.0/cli/conf.d/99-doc
 #ssmtp
 mv /etc/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf.org
 mkdir -p $DOCKER_DIR/conf/ssmtp/
-cp /tmp/ssmtp-mailcatcher.sample $DOCKER_DIR/conf/ssmtp/ssmtp.conf
+cp /tmp/ssmtp-mailcatcher.sample $DOCKER_DIR/conf/ssmtp/ssmtp-mailcatcher.sample
 if [[ ! -f $DOCKER_DIR/conf/ssmtp/ssmtp.conf ]]; then
 cp /tmp/ssmtp-mailcatcher.sample $DOCKER_DIR/conf/ssmtp/ssmtp.conf
 fi
