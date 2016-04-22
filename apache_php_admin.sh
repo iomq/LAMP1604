@@ -33,6 +33,7 @@ chown $APACHE_USER.$APACHE_GROUP /opt
 fi
 
 if [[ $APACHE_CHANGEUSER != "" ]]; then
+touch $WORKDIR/.test
 find $WORKDIR -type f | xargs chmod 664
 find $WORKDIR -type d | xargs chmod 775
     if [[ $APACHE_USER != "" ]]; then

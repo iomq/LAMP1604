@@ -1,0 +1,3 @@
+# /etc/cron.d/ Syntax
+*/1 * * * * root echo "Hallo Cron!" >> /tmp/hallocron.txt
+#

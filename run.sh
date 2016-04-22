@@ -18,17 +18,20 @@ mkdir -p $DOCKER_DIR/conf/apache/sites-available_1604/
 mkdir -p $DOCKER_DIR/conf/apache/sites-enabled_1604/
 mkdir -p $DOCKER_DIR/conf/php/
 #WEB-PHP
-touch $DOCKER_DIR/conf/php/99-docker.ini
-ln -s $DOCKER_DIR/conf/php/99-docker.ini /etc/php5/apache2/conf.d/99-docker.ini
+touch $DOCKER_DIR/conf/php/99-docker_1604.ini
+ln -s $DOCKER_DIR/conf/php/99-docker_1604.ini /etc/php/7.0/apache2/conf.d/99-docker.ini
 #CLI-PHP
-touch $DOCKER_DIR/conf/php/99-docker.ini
-ln -s $DOCKER_DIR/conf/php/99-docker-cli.ini /etc/php5/cli/conf.d/99-docker-cli.ini
+touch $DOCKER_DIR/conf/php/99-docker_1604.ini
+ln -s $DOCKER_DIR/conf/php/99-docker-cli_1604.ini /etc/php/7.0/cli/conf.d/99-docker-cli.ini
 /apache_php_admin.sh
 
 #ssmtp
 mv /etc/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf.org
 mkdir -p $DOCKER_DIR/conf/ssmtp/
-touch $DOCKER_DIR/conf/ssmtp/ssmtp.conf
+cp /tmp/ssmtp-mailcatcher.sample $DOCKER_DIR/conf/ssmtp/ssmtp.conf
+if [[ ! -f $DOCKER_DIR/conf/ssmtp/ssmtp.conf ]]; then
+cp /tmp/ssmtp-mailcatcher.sample $DOCKER_DIR/conf/ssmtp/ssmtp.conf
+fi
 ln -s $DOCKER_DIR/conf/ssmtp/ssmtp.conf /etc/ssmtp/ssmtp.conf
 
 #Profile
@@ -62,7 +65,7 @@ useradd --home /home/$NSENTER_USER -m --shell /bin/bash $NSENTER_USER
 cd $DOCKER_DIR/
 cp /tmp/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-available_1604/
 ln -s $DOCKER_DIR/conf/apache/sites-available_1604/zzzdockerwebsite.conf $DOCKER_DIR/conf/apache/sites-enabled_1604/
-tar xvfz /tmp/iomqwebsite.tar.gz
+cp -r /tmp/iomqwebsite.tar.gz/* $DOCKER_DIR/
 
 #CronJob
 mkdir -p $DOCKER_DIR/conf/cron/

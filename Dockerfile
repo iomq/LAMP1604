@@ -47,6 +47,8 @@ ADD apache_php_admin.sh /apache_php_admin.sh
 ADD local.txt /var/lib/locales/supported.d/local
 ADD zzzdockerwebsite.conf /tmp/zzzdockerwebsite.conf
 ADD iomqwebsite.tar.gz /tmp/iomqwebsite.tar.gz
+ADD ssmtp-mailcatcher.sample /tmp/ssmtp-mailcatcher.sample
+ADD crond.sample /tmp/crond.sample
 
 RUN chmod 755 /*.sh
 
