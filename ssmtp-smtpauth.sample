@@ -1,0 +1,29 @@
+# Config file for SMTP-Auth
+#
+# Config file for sSMTP sendmail
+#
+
+# The person who gets all mail for userids < 1000
+# Make this empty to disable rewriting.
+root=postmaster
+
+# Outgoing Mail Server (SMTP)
+mailhub=mail.test:587
+#mailhub=mail.test:465
+
+# The address where the mail appears to come from for user authentication.
+#rewriteDomain=
+
+# The full hostname
+hostname=docker
+
+# Use STARTTLS(587) or TLS(465)
+UseSTARTTLS=Yes
+#UseTLS=YES
+
+# Username/Password
+AuthUser=test@test
+AuthPass=PASSWORD
+
+# Email 'From header's can override the default domain?
+FromLineOverride=yes
