@@ -1,5 +1,5 @@
 # DEVLAMP (Ubuntu 16.04)
-# 0.1.20160503.0 
+# 0.1.20160519.0
 
 Docker: I/O :: MQ - PHPDEV-Ubuntu 16.04
 
@@ -22,3 +22,7 @@ docker run --link mailcatcher:mailcatcher -d -p "80:80" -p "3306:3306" -v "/dock
 example: full docker run with iomq/mailcatcher
 
 docker run --link mailcatcher:mailcatcher -d -h="iomq1604" --add-host="php.iomq:127.0.0.1" -p "80:80" -p "3306:3306" -v "/dockerdb/mysql/iomq1604:/var/lib/mysql" -v "/docker:/docker" -v "/usr/local/iomqwww:/usr/local/iomqwww" -v "/docker/opt:/opt" -e WORKDIR="/usr/local/iomqwww" -e APACHE_CHANGEUSER=Y -e APACHE_MYUSER=Y -e APACHE_USER=iomq -e APACHE_GROUP=iomq --name iomq1604 iomq/lamp1604
+
+
+MySQL user 'root' has no password but only allows local connections
+mysql -uadmin -pchangeit -h127.0.0.1
