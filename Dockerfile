@@ -25,7 +25,8 @@ RUN apt-get -y install php7.0-sqlite3
 RUN apt-get -y install php7.0-zip
 RUN apt-get -y install php7.0-soap
 RUN apt-get -y install cron
-RUN echo "0.2.20160810.0" > /etc/iomq_version
+RUN apt-get -y install pv
+RUN echo "0.2.20160811.0" > /etc/iomq_version
 RUN apt-get update -qq && apt-get -y dselect-upgrade
 
 ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
