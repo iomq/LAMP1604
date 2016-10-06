@@ -7,17 +7,27 @@ ENV DOCKER_DIR /docker
 ENV DOCKERXDEBUG YES
 
 # Install packages
-RUN echo "0.2.20161004.1" > /etc/iomq_version
+RUN echo "0.3.20161006.0" > /etc/iomq_version
 RUN apt-get update
 RUN apt-get -y dselect-upgrade
-RUN apt-get -y install apt-utils dialog
-RUN apt-get -y install telnet vim inetutils-ping
+RUN apt-get -y install apt-utils
+RUN apt-get -y install dialog
+RUN apt-get -y install telnet
+RUN apt-get -y install vim
+RUN apt-get -y install inetutils-ping
 RUN apt-get -y install git
 RUN apt-get -y install supervisor
 RUN apt-get -y install ssmtp
 RUN apt-get -y install mysql-server mysql-client
-RUN apt-get -y install graphicsmagick graphicsmagick-imagemagick-compat language-pack-de gettext intltool catdoc htmldoc
-RUN apt-get -y install apache2 lynx libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-mcrypt php7.0-curl php7.0-xsl
+RUN apt-get -y install graphicsmagick graphicsmagick-imagemagick-compat
+RUN apt-get -y install language-pack-de
+RUN apt-get -y install gettext
+RUN apt-get -y install intltool
+RUN apt-get -y install catdoc
+RUN apt-get -y install htmldoc
+RUN apt-get -y install apache2
+RUN apt-get -y install lynx
+RUN apt-get -y install libapache2-mod-php7.0 php7.0-mysql php7.0-gd php7.0-mcrypt php7.0-curl php7.0-xsl
 RUN apt-get -y install php7.0-intl
 RUN apt-get -y install php7.0-mbstring
 RUN apt-get -y install php7.0-cli
@@ -27,7 +37,6 @@ RUN apt-get -y install php7.0-zip
 RUN apt-get -y install php7.0-soap
 RUN apt-get -y install cron
 RUN apt-get -y install pv
-RUN echo "0.2.20161004.1" > /etc/iomq_version
 RUN apt-get update -qq && apt-get -y dselect-upgrade
 
 ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
