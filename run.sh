@@ -5,6 +5,8 @@ DOCKER_DIR=${DOCKER_DIR:-"/docker"}
 mkdir -p $DOCKER_DIR
 
 #MYSQL
+mkdir -p /var/run/mysqld
+chown -R mysql:mysql /var/run/mysqld/
 mkdir -p $DOCKER_DIR/conf/mysql/
 /mysql_admin.sh
 touch $DOCKER_DIR/conf/mysql/myDOCKER1604.cnf
