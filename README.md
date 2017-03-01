@@ -1,5 +1,5 @@
 # DEVLAMP (Ubuntu 16.04)
-# 0.5.20170228.0
+# 0.5.20170301.0
 
 Docker: I/O :: MQ - PHPDEV-Ubuntu 16.04
 
@@ -26,3 +26,6 @@ docker run --link mailcatcher:mailcatcher -d -h="iomq1604" --add-host="php.iomq:
 
 MySQL user 'root' has no password but only allows local connections
 mysql -uadmin -pchangeit -h127.0.0.1
+
+supervisorctl (start|stop) apache2
+supervisorctl (start|stop) mysqld
