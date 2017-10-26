@@ -1,5 +1,5 @@
 # DEVLAMP (Ubuntu 16.04)
-# 0.5.20171023.0
+# 0.5.20171027.0
 
 Docker: I/O :: MQ - PHPDEV-Ubuntu 16.04
 
@@ -9,7 +9,7 @@ external config (/docker/conf/)
 
 * Ubuntu 16.04
 * Apache 2.4.18
-* MySQL 5.7.19
+* MySQL 5.7.20
 * PHP 7.0.22 (mod-php, xdebug, cli, phpunit, composer)
 * mail: ssmtp (docker pull iomq/mailcatcher)
 * cron.d-Support
