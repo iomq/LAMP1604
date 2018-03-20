@@ -7,7 +7,7 @@ ENV DOCKER_DIR /docker
 ENV DOCKERXDEBUG YES
 
 # Install packages
-RUN echo "0.5.20180319.0" > /etc/iomq_version
+RUN echo "0.5.20180320.0" > /etc/iomq_version
 RUN apt-get update
 RUN apt-get -y dselect-upgrade
 RUN apt-get -y install apt-utils
