@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Holger May <docker@iomq.org>
+LABEL maintainer="Holger May <docker@iomq.org>"
 
 #ENV
 ENV DEBIAN_FRONTEND noninteractive
