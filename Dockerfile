@@ -7,7 +7,7 @@ ENV DOCKER_DIR /docker
 ENV DOCKERXDEBUG YES
 
 # Install packages
-RUN echo "0.5.20180606.0" > /etc/iomq_version
+RUN echo "0.5.20180607.0" > /etc/iomq_version
 RUN apt-get update
 RUN apt-get -y dselect-upgrade
 RUN apt-get -y install apt-utils
@@ -35,6 +35,7 @@ RUN apt-get -y install php-xdebug
 RUN apt-get -y install php7.0-sqlite3
 RUN apt-get -y install php7.0-zip
 RUN apt-get -y install php7.0-soap
+RUN apt-get -y install php7.0-bcmath
 RUN apt-get -y install cron
 RUN apt-get -y install pv
 RUN apt-get -y install wget
