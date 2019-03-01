@@ -7,7 +7,7 @@ ENV DOCKER_DIR /docker
 ENV DOCKERXDEBUG YES
 
 # Install packages
-RUN echo "0.5.20190301.0" > /etc/iomq_version
+RUN echo "0.5.20190302.0" > /etc/iomq_version
 RUN apt-get update
 RUN apt-get -y dselect-upgrade
 RUN apt-get -y install apt-utils
@@ -44,7 +44,8 @@ RUN apt-get -y install whois
 RUN apt-get -y install dnsutils
 RUN apt-get update -qq && apt-get -y dselect-upgrade
 
-ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
+#ADD https://phar.phpunit.de/phpunit.phar /usr/local/bin/phpunit
+ADD https://phar.phpunit.de/phpunit-6.5.9.phar /usr/local/bin/phpunit
 ADD https://phar.phpunit.de/phpcpd.phar /usr/local/bin/phpcpd
 ADD https://phar.phpunit.de/phpdcd.phar /usr/local/bin/phpdcd
 ADD https://phar.phpunit.de/phploc.phar /usr/local/bin/phploc
