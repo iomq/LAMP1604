@@ -1,7 +1,7 @@
 
 # DEVLAMP (Ubuntu 16.04)
 
-# 0.5.20200129.0
+# 0.5.20200206.0
 
 Docker: I/O :: MQ - PHPDEV-Ubuntu 16.04
 
